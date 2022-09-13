@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>stop watch</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+
+  <body>
+
+    <div id="body" onload="clock()">
+      <div id="clock">00:00</div>
+    </div>
+
+    <p>숨 참고 럽 다이브~♬♪<br>여러분의 숨 참기 실력은?!</p>
+
+    <div id="stop-watch-wrap">
+      <div id="stop-watch">0</div>
+      <div class="button-wrap">
+        <button onclick="startCount()">start</button>
+        <button onclick="pauseCount()">pause</button>
+        <button onclick="resetCount()">reset</button>
+      </div>
+    </div>
+    <script type="text/javascript">
+
+    //상단 시계
+  function clock() {
+  const elem = document.getElementById("clock");
+  let date = new Date();
+  let years = date.getFullYear(); // 의문1: getYear()하면 122로 표현되는데 왜지?
+  let month = date.getMonth();
+  let clockDate = date.getDate();
+  let day = date.getDay();
+  let week = ['SON', 'MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT'];
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+  let inputH, inputM, inputS, inputMonth, inputclockDate;
+  inputMonth = checkTime(month+1);
+  inputclockDate = checkTime(clockDate);
+  inputH = checkTime(hours);
+  inputM = checkTime(minutes);
+  inputS = checkTime(seconds);
+
+  elem.innerHTML = `TODAY ${years} ${inputMonth} / ${inputclockDate} ${week[day]} \n ${inputH}:${inputM}:${inputS}`; // 의문2: \n했는데 왜 띄어쓰기가 안될까??
+  // `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes }`  : minutes }:${seconds < 10 ? `0${seconds }`  : seconds }`;
+  setInterval(clock, 1000);
+};
+
+// function init(){
+// clock();
+// setInterval(clock, 1000);
+// }
+// init();
+
+function checkTime(i){
+  if( i < 10 ){
+    i = "0" + i;
+  }
+  return i;
+}
+clock();
+
+
+    //스탑워치
+    let count = 0;
+    let timer_is_on = 0;
+    let t;
+    let elem = document.getElementById('stop-watch');
+    // console.log(elem);
+
+    //1초마다 한번씩 실행되는 함수 구현
+    function timeCount(){
+      elem.innerHTML = count;
+      count = count + 1;
+       t = setTimeout(timeCount,1000);
+      };
+
+    // start를 실행시키는 함수
+    function startCount(){
+      console.log(timer_is_on);
+      if( timer_is_on == 0 ){
+        timer_is_on = 1;
+        timeCount();
+      };
+    };
+
+    // pause을 실행시키는 함수
+    function pauseCount(){
+        clearTimeout(t);
+       timer_is_on = 0;
+    };
+
+    // reset을 실행시키는 함수
+    function resetCount(){
+      count = 0;
+      clearTimeout(t);
+      timer_is_on = 0;
+      document.getElementById('stop-watch').innerHTML = count;
+    };
+    </script>
+  </body>
+</html>

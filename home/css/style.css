@@ -1,0 +1,444 @@
+@charset "UTF-8";
+html,body { height: 100%; }
+body {
+  min-width: 1320px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #666666;
+}
+ul, ol { list-style: none; }
+a { color : #666666; }
+h1,h2,h3,h4,h5,h6 { line-height: 1; }
+
+
+/* header area------------------------------------------- */
+#header-wrap {
+  width: 1320px;
+  margin: 0 auto;
+  background: #f1f1f1;
+}
+#header-box {
+  position: fixed;
+  width: 100%;
+  height: 86px;
+  background: #fff;
+  z-index: 200;
+}
+/* 상단 고정형 메뉴 -------------------------------------------*/
+#header {
+  position: fixed;
+  width: 1320px;
+  margin: 0 auto;
+  padding: 26px 20px 0px;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 300;
+  background: #fff;
+}
+#logo { float: left; }
+#header .inner { float: right; }
+#header .inner #gnb, #header .inner #login-menu { float: left; }
+#header .inner > ul {
+  overflow: hidden;
+}
+#header .inner > ul li {
+  float: left;
+  /* height: 20px; */
+}
+#header .inner > ul > li > a {
+  line-height: 30px;
+}
+
+
+#gnb {
+  /* overflow: hidden; */
+  margin-right: 250px;
+  font-weight: 700;
+}
+#gnb li {
+  /* float: left;
+  height: 20px; */
+  margin-left: 50px;
+}
+#gnb li a {
+  /* line-height: 20px; */
+}
+#gnb li:nth-child(1) {
+  margin-left: 30px;
+}
+
+
+#login-menu {
+  /* overflow: hidden; */
+}
+#login-menu li {
+  /* float: left;
+  height: 20px; */
+  margin-left: 30px;
+}
+#login-menu li a {
+  line-height: 20px;
+}
+#login-menu li:nth-child(1) {
+  margin-left: 0px;
+}
+
+
+/* 장바구니 카운터------------------------------------------- */
+#login-menu li a.cart span.count {
+  display: inline-block;
+  float: right;
+  width: 45px;
+  height: 36px;
+  margin-left: 10px;
+
+}
+#login-menu li:nth-child(1) {
+  background: url('../img/gnb_ico_chatbot_off.png');
+  background-repeat: no-repeat;
+}
+#login-menu li:nth-child(2) {
+  margin-top: 5px;
+  background: url('../img/gnb_ico_myasiana_off.png');
+  background-repeat: no-repeat;
+}
+#login-menu li:nth-child(3) {
+  margin-top: 7px;
+  background: url('../img/gnb_ico_search_off.png');
+  background-repeat: no-repeat;
+}
+
+/* 메인 배너 영역 -------------------------------------------*/
+#mainbanner {
+  background-image: url('../img/asiana_banner/main_banner_bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+#mainbanner .inner {
+  position: relative;
+  width: 1320px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* 메인배너 텍스트------------------------------------------- */
+#mainbanner .maintext {
+  padding-top: 230px;
+  padding-bottom: 150px;
+  padding-left: 150px;
+}
+
+/* 메인배너 메인타이틀------------------------------------------- */
+#mainbanner .maintext p {
+  font-size: 50px;
+  color: #fff;
+}
+#mainbanner .maintext p.maintitle {
+  line-height: 60px;
+}
+#mainbanner .maintext p.subtitle {
+  line-height: 26px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+#mainbanner .maintext p.subtitle + .common-btn {
+  margin-top: 30px;
+  border: 3px solid #f9f9f9;
+  color: #f9f9f9;
+}
+
+/* 버튼 공통 영역------------------------------------------- */
+.common-btn {
+  display: inline-block;
+  width: 180px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 3px solid #777;
+  border-radius: 5px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #777;
+}
+
+/* 컨텐츠 영역(section 1~5 공통부분)------------------------------------------- */
+#container section .inner {
+  width: 1320px;
+  min-height: 650px;
+  margin:  0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+#container section:nth-child(even) {
+  background: #f9f9f9;
+}
+#container section:nth-of-type(1) .inner {
+  padding-top: 165px;
+  min-height: 485px;
+}
+#container section:nth-of-type(2) .inner {
+  padding-top: 100px;
+  padding-bottom: 1px;
+  min-height: 600px;
+}
+
+/* section 공통요소 style*/
+#container section .inner h2 {
+  font-size: 45px;
+  line-height: 1;
+  color: #333;
+}
+#container section .inner .subtitle {
+  margin-top: 22px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #666666;
+}
+
+/* section 첫번째----------------------------------------------- */
+#container section .inner .box-wrap {
+  overflow: hidden;
+}
+#container section .inner .box-wrap li {
+  float: left;
+  width: calc(25% - 40px);
+  padding: 20px 20px;
+  text-align: center;
+  /* background: yellow; */
+}
+#container section .inner .box-wrap li .items {
+  content: ''; /*수정하고싶은것1: 이건 뭐지? 여기서 뭐슨 역할을 하고있지?*/
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  box-shadow: 1px 3px 10px rgba(0,0,0,0.5);
+  background-size: 100%;
+  /* background-color: rgba(0,0,0,0.3); */
+} /*수정하고싶은것1: items에 background-color: rgba(0,0,0,0.9);를 해주면 적용이 되는데
+이미지를 넣어주면 이미지가 background-color보다 위로 올라가서
+검정투명박스를 사용할 수 없어서 아래에 <div class="img">라는 박스를 한개더 만들어서 씌워줬다.
+이렇게 하지말고 더 깔끔하게 할 수 있는 방법은??*/
+/* --------------- */
+#container section .inner .box-wrap li:nth-last-of-type(1) .items {
+  background-image: url('../img/asiana_section_1/section_4.png');
+}
+#container section .inner .box-wrap li:nth-last-of-type(2) .items {
+  background-image: url('../img/asiana_section_1/section_3.jpg');
+}
+#container section .inner .box-wrap li:nth-last-of-type(3) .items {
+  background-image: url('../img/asiana_section_1/section_2.jpg');
+}
+#container section .inner .box-wrap li:nth-last-of-type(4) .items {
+  background-image: url('../img/asiana_section_1/section_1.jpg');
+}
+/* --------------- */
+#container section .inner .box-wrap li .items .img {
+  width: 200px;
+  height: 200px;
+  padding: 45px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.3);
+}
+/* --------------- */
+#container section .inner .box-wrap li .items .img-text {
+  padding-top: 30%;
+}
+#container section .inner .box-wrap li .items h3 {
+  /* padding-top: 10px; */
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+#container section .inner .box-wrap li .items p {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  display: none;
+}
+#container section .inner .box-wrap li .items .img:hover p {
+  display: block;
+  transition: 0.8s; /*수정하고싶은것1: hover에서 transition 시간이 안먹혀서 p텍스트가 불쑥튀어나오는 이유는?*/
+}
+
+/* section 두번째------------------------------------------- */
+#container section .inner .thumb-img-wrap {
+  text-align: center;
+}
+#container section .inner .thumb-img-wrap ul {
+  overflow: hidden;
+  display: inline-block;
+}
+#container section .inner .thumb-img-wrap ul:nth-child(1) {
+  margin-top: 50px;
+}
+#container section .inner .thumb-img-wrap ul:nth-child(5) {
+display: block;
+/* margin-bottom: 50px; */
+}
+#container section .inner .thumb-img-wrap ul li {
+  float: left;
+  width: calc( 100% / 6 );
+  animation-name: big;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+}
+@keyframes big {
+  0% { opacity: 0; transform: scale(0.0); }
+  100% { opacity: 1; transform: scale(1.0); }
+}
+#container section .inner .thumb-img-wrap ul li:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+#container section .inner .thumb-img-wrap ul li img {
+  width: 80%;
+}
+
+/* section 3,4,5공통 ----------------------------------------------------*/
+#container section .inner .box {
+  float: left;
+  width: 50%;
+  min-height: 650px;
+  text-align: center;
+}
+#container section .inner .box.img {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+#container section .inner .box .text-box {
+  display: inline-block;
+  text-align: left;
+  width: 400px;
+  margin-top: 160px;
+  padding-left: 140px;
+}
+#container section .inner .box .text-box h2 {
+  line-height: 60px;
+}
+#container section .inner .box .text-box a {
+  text-align: center;
+  margin-top: 25px;
+}
+#container section .box.img:hover {
+  opacity: 0.5;
+  transition: 0.8s;
+  transform: scale(1.2,1.2);
+  transform-origin: center center;
+  /* 수정하고싶은것1: 왜 이미지 width가 넓어지는가!!!!!*/
+}
+/* section 세번째 ----------------------------------------------------*/
+#container section:nth-child(3) .box.img {
+  background: url('../img/subway_section_3/bg.png');
+}
+
+
+/* section 네번째 ----------------------------------------------------*/
+#container section:nth-child(4) .box.img {
+  background-image: url('../img/asiana_section_4/bg.png');
+}
+#container section:nth-child(4) .inner .box {
+  text-align: left;
+}
+#container section:nth-child(4) .inner .box .text-box {
+  display: inline-block;
+  text-align: right;
+  margin-top: 160.5px;
+  padding-left: 50px;
+}
+
+
+/* section 다섯번째---------------------------------------------------- */
+#container section:nth-child(5) .box.img {
+  background-image: url('../img/asiana_section_5/bg.png');
+}
+
+
+/* 하단 영역---------------------------------------------------- */
+#footer {  background-color: #222; }
+#footer .inner {
+  position: relative;
+  width: 1320px;
+  height: 200px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+#footer .inner .f-box {
+  float: left;
+  padding-left: 30px;
+}
+
+/* site menu ----------------------------------------------------*/
+#footer .inner .f-box ul { overflow: hidden; }
+#footer .inner .f-box ul li {
+  float: left;
+  height: 20px;
+  margin-right: 40px;
+ }
+ #footer .inner .f-box ul li:last-child {
+   margin-right: 0;
+ }
+ #footer .inner .f-box ul li a {
+   line-height: 20px;
+   color: #fff;
+  }
+  #footer .inner .f-box .tel {
+    float: left;
+    font-size: 12px;
+    margin-top: 0px;
+    margin-right: 17px;
+    line-height: 16px;
+    color: #777;
+  }
+#footer .inner .f-box .tel-first  {
+  margin-top: 18px;
+}
+#footer .inner .f-box .copyright {
+  margin-top: 80px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #777;
+  }
+
+
+#familysite {
+  position: absolute;
+  width: 190px;
+  height: 30px;
+  top: 40px;
+  right: 20px;
+  border: 1px solid #d1d1d1;
+  color: #333;
+  outline: none;
+  appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-right: 15px;
+  padding-left:  15px;
+  background-image: url('../img/select_box_arrow.png');
+  background-repeat: no-repeat;
+  /* background-position: right center; */
+  background-position: calc( 100% - 15px ) center;
+}
+select::-ms-expand {  display: none; }
+#familysite:focus {
+  border: 1px solid #999;
+  background-image: url('../img/select_box_arrow_focus.png');
+}
+
+
+
+
+
+
+
+/**/
